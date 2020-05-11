@@ -1,0 +1,59 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.body{
+    background-color: rgba(0,0,0,0);
+    font: 14px/1.5 Helvetica,sans-serif,STHeiTi;
+    color: #333;
+    outline: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    vertical-align: top;
+}
+.fluid-img{
+    width: 100%;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix::after{
+    /*设置添加子元素的内容为空*/
+    content: '';
+    /*设置添加子元素为块级元素*/
+    display: block;
+    /*设置添加子元素的高度为0*/
+    height: 0;
+    /*设置添加子元素看不见*/
+    visibility: hidden;
+    /*设置添加子元素清除浮动*/
+    clear: both;
+}
+.clearfix{
+    /*兼容IE6*/
+    *zoom: 1;
+}
+
+/*自定义居中混合*/
+.center(){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.hCenter(){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.vCenter(){
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
