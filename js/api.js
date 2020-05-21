@@ -1,7 +1,6 @@
 ;(function () {
   axios.defaults.baseURL = "http://111.67.196.2:3000";
   axios.defaults.timeout = 3000;
-
   class NJHttp {
     static get (url="", data={}){
       return new Promise(function (resolve, reject) {
