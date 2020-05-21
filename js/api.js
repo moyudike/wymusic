@@ -34,6 +34,9 @@
     static getHomeBanner () {
       return NJHttp.get('/banner', {type: 2})
     }
+    static getHomeRecommend(){
+      return NJHttp.get('/personalized')
+    }
   }
 
   window.NJHttp = NJHttp;

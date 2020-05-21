@@ -240,6 +240,7 @@
     height: 100%;
     .main-in{
         width: 100%;
+        height: 4660/100rem;
         padding: 0 30/100rem;
         box-sizing: border-box;
         .pull-down{
@@ -331,8 +332,8 @@
           }
         }
         .recommend{
-          width: 100%;
-          border-top: 1px solid #ccc;
+            width: 100%;
+            border-top: 1px solid #ccc;
           .recommend-top{
             width: 100%;
             height: 120/100rem;
@@ -355,6 +356,46 @@
               font-weight: bold;
               margin-top: 27/100rem;
             }
+          }
+          .recommend-bottom{
+            width: 100%;
+           ul{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li{
+                margin-bottom: 40/100rem;
+             div{
+                width: 216/100rem;
+                height: 216/100rem;
+                border-radius: 15/100rem;
+                overflow: hidden;
+                position: relative;
+              p{
+                position: absolute;
+                top: -60/100rem;
+                right: 10/100rem;
+                img{
+                    position: relative;
+                    top: -5/100rem;
+                    right: -22/100rem;
+                    width: 26/100rem;
+                    vertical-align: bottom;
+                }
+                span{
+                    font-size: 26/100rem;
+                    color: #fff;
+                }
+              }
+            }
+            &>p{
+                width: 216/100rem;
+                margin-top: 15/100rem;
+                font-size: 26/100rem;
+                color: #333;
+             }
+            }
+           }
           }
         }
     }
