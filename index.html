@@ -20,7 +20,7 @@
         document.write(text);
         document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px'
     </script>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet/less" href="css/index.less">
 </head>
@@ -58,21 +58,19 @@
     <!-- 首页轮播 -->
     <div class="main">
         <div class="main-in">
-            <div class="pull-down">
-                <img src="images/pull-down.png" alt="">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="60px" height="60px" viewBox="279.747 366.016 60 60" enable-background="new 279.747 366.016 60 60" xml:space="preserve">
+          <div class="pull-down">
+            <img src="images/pull-down.png" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="60px" height="60px" viewBox="279.747 366.016 60 60" enable-background="new 279.747 366.016 60 60" xml:space="preserve">
 <path id="refreshLogo" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" d="M301.144,374.58
 	c-16.549,5.334-25.163,23.41-15.075,37.437c8.615,12.051,26.864,15.606,40.692,8.001c10.995-6.025,14.282-18.768,7.368-28.349
 	c-5.555-7.705-17.229-9.977-26.07-5.137c-7.027,3.853-8.614,10.767-5.44,16.298c3.06,5.137,11.221,5.631,15.302,2.667
 	c5.44-4.05,4.193-10.568,1.474-15.31c-14.282-25.09,7.254-24.694,9.975-18.966"/>
-                </svg>
-            </div>
+</svg>
+          </div>
             <!-- 首页轮播 -->
             <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  
-                </div>
+                <div class="swiper-wrapper"></div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination"></div>
             </div>
@@ -105,21 +103,18 @@
               </ul>
             </div>
             <!-- 推荐歌单 -->
-            <div class="recommend">
-              <div class="recommend-top">
-                <h3>推荐歌单</h3>
-                <span>歌单广场</span>
-              </div>
-              <div class="recommend-bottom">
-                
-              </div>
-            </div>
-            <div class="pull-up">
+            <div class="recommend"></div>
+            <div class="exclusive"></div>
+            <div class="album"></div>
+            <dic class="mv"></dic>
+            <dic class="dj"></dic>
+            <!-- 首页内容结束 -->
+            <!-- <div class="pull-up">
                 <p>
                     <img src="images/pull-up.gif" alt="">
                     <span>正在加载更多</span>
                 </p>
-            </div>
+            </div> -->
         </div>
     </div>
     <script id="bannerSlide" type="text/html">
@@ -130,7 +125,7 @@
         </div>
       <% } %>
     </script>
-    <script id="recommendItem" type="text/html">
+<!--<script id="recommendItem" type="text/html">
       <ul>
         <% for(let i = 0; i < 6; i++) { %>
         <li>
@@ -167,6 +162,85 @@
         <% } %>
       </ul>
     </script>
+    <script id="exclusiveItem" type="text/html">
+      <ul>
+        <% for(let i = 0; i < result.length; i++) { %>
+        <li>
+          <div>
+            <i></i>
+            <img src="<%=result[i].sPicUrl%>" alt="11111" class="fluid-img">
+          </div>
+          <p class="exclusive-title"><%=result[i].name%></p>
+        </li>
+        <% } %>
+      </ul>
+    </script>
+    <script id="albumItem" type="text/html">
+      <ul>
+        <% for(let i = 0; i < albums.length; i++) { %>
+          <li>
+            <div>
+              <img src="<%=albums[i].picUrl%>" alt="" class="fluid-img">
+            </div>
+            <p class="album-title"><%=albums[i].name%></p>
+            <p class="album-singer"><%=albums[i].artists[0].name%></p>
+          </li>
+        <% } %>
+      </ul>
+    </script>
+    <script id="mvItem" type="text/html">
+      <ul>
+        <% for(let i = 0; i < result.length; i++) { %>
+          <li>
+            <div>
+              <img src="<%=result[i].picUrl%>" alt="" class="fluid-img">
+              <p>
+                <img src="images/home-small-video.png" alt="">
+                <span><%=result[i].playCount%></span>
+              </p>
+            </div>
+            <p class="mv-title"><%=result[i].name%></p>
+            <p class="mv-singer"><%=result[i].artistName%></p>
+          </li>
+        </li>
+        <% } %>
+      </ul>
+    </script> -->
+    <script id="category" type="text/html">
+      <div class="category">
+        <div class="category-top">
+          <h3><%=title%></h3>
+          <span><%=subTitle%></span>
+        </div>
+        <div class="category-bottom">
+          <ul>
+            <% for (let i = 0; i < result.length; i++ ) {%>
+            <li style="width: <%=result[i].width%>rem">
+              <div>
+                <img src="<%=result[i].picUrl%>" alt="" class="fluid-img">
+                <%if(title == "推荐歌单") {%>
+                <p class="p1">
+                  <img src="images/home-small-play.png" alt="">
+                  <span><%=result[i].playCount%></span>
+                </p>
+                <%}else if(title == "独家放送") {%>
+                <p class="p2">
+                  <img src="images/home-exclusive.png" alt="">
+                </p>
+                <%} else if(title == "主播电台") {%>
+                <p class="p3">
+                  <img src="images/home-small-dj.png" alt="">
+                </p>
+                <%}%>
+              </div>
+              <p class="category-title"><%=result[i].name%></p>
+              <p class="category-singer"><%=result[i].artistName%></p>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </script>
     <!-- 底部 -->
     <div class="footer">
         <ul>
@@ -192,16 +266,16 @@
             </li>
         </ul>
     </div>
-<script src="js/zepto.js"></script>
 <script src="js/less.js"></script>
+<script src="js/zepto.js"></script>
 <script src="js/fx.js"></script>
 <script src="js/fx_methods.js"></script>
 <script src="js/iscroll-probe.js"></script>
 <script src="js/swiper.js"></script>
 <script src="js/axios.js"></script>
+<script src="js/api.js"></script>
 <script src="js/template-web.js"></script>
 <script src="js/clamp.js"></script>
-<script src="js/api.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

@@ -34,7 +34,19 @@
       return NJHttp.get('/banner', {type: 2})
     }
     static getHomeRecommend(){
-      return NJHttp.get('/personalized')
+      return NJHttp.get('/personalized', {offset: 0, limit:6})
+    }
+    static getHomeExclusive(){
+      return NJHttp.get('/personalized/privatecontent')
+    }
+    static getHomeAlbum(){
+      return NJHttp.get('/top/album', {offset:0, limit:6})
+    }
+    static getHomeMv(){
+      return NJHttp.get('/personalized/mv')
+    }
+    static getHomeDj(){
+      return NJHttp.get('/personalized/djprogram')
     }
   }
 
