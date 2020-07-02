@@ -1,27 +1,17 @@
 $(function () {
-      $(".header-center-box>input").focus(function () {
-        $(".header").addClass("active");
-    });
-    $(".header-cancle").click(function () {
-        $(".header").removeClass("active");
-    });
-    $(".header-switch>span").click(function () {
-        $(this).addClass("active").siblings().removeClass("active")
-        $(".header-switch>i").animate({left: this.offsetLeft},100)
-    })
-    let pageArray = ["home", "video", "me", "friend", "account"]
-    $(".footer>ul>li").click(function () {
-        $(this).addClass("active").siblings().removeClass("active")
-        let url = $(this).find("img").attr("src")
-        // console.log(url);
-        url = url.replace("normal", "selected")
-        $(this).find("img").attr("src", url)
-        $(this).siblings().find("img").forEach(itemImg => itemImg.src = itemImg.src.replace("selected", "normal"));
-        let currentItem = pageArray[$(this).index()];
-        $(".header").removeClass().addClass("header " + currentItem)
+  //公共头部
+  $(".header").load("./../../common/header.html", function () {
+    let sc = document.createElement("script");
+    sc.src = "./../common/js/header.js"
+    document.body.append(sc)
+  })
+  // 公共底部
+    $(".footer").load("./../../common/footer.html", function () {
+      let sc = document.createElement("script");
+      sc.src = "./../common/js/footer.js";
+      document.body.append(sc);
     })
 
-    // 公共区域
     // 1.获取svg路径长度
     let length = $("#refreshLogo")[0].getTotalLength();
     // console.log(length);
@@ -73,7 +63,6 @@ $(function () {
             $("#refreshLogo").css({"stroke-dashoffset": length})
         }, 3000)
     }
-
     // 创建首页轮播    
     
     HomeApis.getHomeBanner ()
@@ -244,4 +233,5 @@ $(function () {
       //   myScroll.refresh();
       //   console.log(myScroll.maxScrollY);
       // }, 5000)
+      
 })

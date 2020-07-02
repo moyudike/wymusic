@@ -1,0 +1,200 @@
+@import "../../css/common";
+// 头部开始
+html, body{
+  width: 100%;
+  height: 100%;
+}
+// 首页轮播
+.main{
+    width: 100%;
+    height: 100%;
+    .main-in{
+        width: 100%;
+        height: 3666/100rem;
+        padding: 0 30/100rem;
+        box-sizing: border-box;
+        .pull-down{
+            width: 100%;
+            height: 88/100rem;
+            position: relative;
+            img{
+              height: 55/100rem;
+              .center()
+            }
+            svg{
+              height: 52/100rem;
+              .center()
+            }
+        }
+        .pull-up{
+            width: 100%;
+            height: 98/100rem;
+            p{
+                text-align: center;
+                padding-top: 29/100rem;
+                box-sizing: border-box;
+                font-size: 24/100rem;
+            }
+        }
+        .swiper-container{
+            width: 690/100rem;
+            height: 266/100rem;
+            margin-top: 30/100rem;
+            border-radius: 10/100rem;
+            .swiper-wrapper{
+                .swiper-slide{
+                    span{
+                        z-index: 99;
+                        padding: 5/100rem 10/100rem;
+                        font-size: 22/100rem;
+                        color: #fff;
+                        background:skyblue;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        border-top-left-radius: 15/100rem;
+                    }
+                }
+            }
+            .swiper-pagination{
+                .my-bullet{
+                    display: inline-block;
+                    width: 14/100rem;
+                    height: 14/100rem;
+                    margin: 0 6/100rem;
+                    background: #ccc;
+                    border-radius: 50%;
+                }
+                .my-bullet-active{
+                    background: #fd271b;
+                }
+            }
+        }
+        .nav{ 
+          width: 100%;
+          padding: 44/100rem 0;
+          ul{
+            display: flex;
+            li{
+              margin-right: 50/100rem;
+              text-align: center;
+              &:last-child{
+                margin-right: 0;
+              }
+              img{
+                width: 98/100rem;
+                background: #fd271b;
+                border-radius: 50%;
+                display: block;
+                margin-bottom: -46/100rem;
+              }
+              span{
+                font-size: 22/100rem;
+              }
+              p{
+                position: relative;
+                i{
+                  position: absolute;
+                  .center();
+                  font-size: 22/100rem;
+                  color: #fd271b;
+                }
+              }
+            }
+          }
+        }
+        .category{
+            width: 100%;
+            border-top: 1px solid #ccc;
+          .category-top{
+            width: 100%;
+            height: 120/100rem;
+            display: flex;
+            justify-content: space-between;
+            h3{
+              font-size: 34/100rem;
+              font-weight: bold;
+              color: #333;
+              line-height: 120/100rem;
+            }
+            span{
+              font-size: 26/100rem;
+              border: 1px solid #333;
+              border-radius: 33/100rem; 
+              padding: 20/100rem 20/100rem;
+              height: 66/100rem;
+              box-sizing: border-box;
+              text-align: center;
+              font-weight: bold;
+              margin-top: 27/100rem;
+            }
+          }
+          .category-bottom{
+            width: 100%;
+           ul{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li{
+                margin-bottom: 40/100rem;
+                width : 216/100rem;
+             div{
+                width: 100%;
+                border-radius: 15/100rem;
+                overflow: hidden;
+                position: relative;
+                .p1{
+                  position: absolute;
+                  top: -60/100rem;
+                  right: 10/100rem;
+                  img{
+                      position: relative;
+                      top: -11/100rem;
+                      right: -22/100rem;
+                      width: 26/100rem;
+                      vertical-align: bottom;
+                  }
+                  span{
+                      font-size: 26/100rem;
+                      color: #fff;
+                  }
+                }
+                .p2{
+                  position: absolute;
+                  left: 10/100rem;
+                  top: 10/100rem;
+                  img{
+                    width: 34/100rem;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                  }
+                }
+                .p3{
+                  position: absolute;
+                  right: 10/100rem;
+                  bottom: 10/100rem;
+                  img{
+                    width: 56/100rem;
+                    vertical-align: bottom;
+                  }
+                }
+            }
+            .category-title{
+                width: 100%;
+                margin-top: 15/100rem;
+                font-size: 26/100rem;
+                color: #333;
+            }
+            .category-singer{
+                width: 100%;
+                margin-top: 5/100rem;
+                font-size: 24/100rem;
+                color: #ccc;
+             }
+            }
+           }
+          }
+        }
+    }
+}

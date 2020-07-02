@@ -1,5 +1,5 @@
 ;(function () {
-  axios.defaults.baseURL = "http://111.67.196.2:3000";
+  axios.defaults.baseURL = "http://music.it666.com:3666";
   axios.defaults.timeout = 3000;
   class NJHttp {
     static get (url="", data={}){
@@ -48,8 +48,26 @@
     static getHomeDj(){
       return NJHttp.get('/personalized/djprogram')
     }
+    static getSearch(){
+      return NJHttp.get('/search/hot/detail')
+    }
+    static getHomeSearchSuggest(keywords){
+      return NJHttp.get('/search/suggest?keywords="+keywords+"&type=mobile')
+    }
+  }
+
+  class SearchApis {
+    static getDetailSearch (keywords="",offset=0,limit=30,type=1) {
+      return NJHttp.get('/search', {
+        keywords: keywords,
+        offset: offset,
+        limit: limit,
+        type: type
+      })
+    }
   }
 
   window.NJHttp = NJHttp;
   window.HomeApis = HomeApis;
+  window.SearchApis = SearchApis;
 })();

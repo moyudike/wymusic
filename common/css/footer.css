@@ -1,0 +1,38 @@
+/* 底部footer区域 */
+.footer-in {
+  width: 100%;
+  height: 0.98rem;
+  position: fixed;
+  left: 0;
+  bottom: 0; 
+  z-index: 999;
+}
+.footer-in ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: yellow;
+}
+.footer-in ul li {
+  text-align: center;
+  margin: 0 0.46rem;
+}
+.footer-in ul li img {
+  display: block;
+  width: 0.56rem;
+  height: 0.56rem;
+  margin-top: 0.1rem;
+}
+.footer-in ul li a{
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  display: block;
+  font-size: 0.18rem;
+}
+.footer-in ul li.active {
+  color: #fd271b;
+}
+.footer-in ul li.active img {
+  background: #fd271b;
+  border-radius: 50%;
+}
